@@ -48,6 +48,7 @@ border-color: #fbf6f6;
 .course > li {
 position: relative;
 margin-bottom: 30px;
+
 }
 
 .course > li .date {

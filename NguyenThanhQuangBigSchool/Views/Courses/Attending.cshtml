@@ -6,6 +6,7 @@
 
 <h2>Attending</h2>
 
+<div class="course">
     <ul>
         @foreach (var course in Model.UpcommingCourses)
         {
@@ -25,8 +26,6 @@
                         {
                             <button class="btn btn-default btn-sm js-toggle-follow" data-user-id="@course.LecturerId">Follow</button>
                         }
-
-
                     </span>
                     <span class="category">
                         @course.Category.Name
@@ -40,36 +39,5 @@
             </li>
         }
     </ul>
-
-@section scripts
-{
-    <script>
-        $(document).ready(function() {
-            $(".js-toggle-attendance").click(function (e) {
-                var button = $(e.target);
-                $.post("/api/attendances", { courseId: button.attr("data-course-id") })
-                    .done(function () {
-                        button
-                            .removeClass("btn-default")
-                            .addClass("btn-info")
-                            .text("Going");
-                    })
-                    .fail(function () {
-                        alert("Songthing failed!");
-                    });
-            });
-            $(".js-toggle-follow").click(function (e) {
-                var button = $(e.target);
-                $.post("/api/followings", { followeeId: button.attr("data-user-id") })
-                    .done(function () {
-                        button.text("Following");
-                    })
-                    .fail(function () {
-                        alert("Songthing failed!");
-                    });
-            });
-
-        });
-    </script>
-}
+</div>
 
