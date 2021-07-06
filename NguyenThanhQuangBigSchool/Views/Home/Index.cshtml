@@ -1,59 +1,70 @@
-﻿@model NguyenThanhQuangBigSchool.ViewModels.CoursesViewModel
+﻿@*@model IEnumerable<NguyenThanhQuangBigSchool.Models.Coures>*@
+@model NguyenThanhQuangBigSchool.ViewModels.CoursesViewModel
 @{
     ViewBag.Title = "Home Page";
 }
+@*<link href="~/Content/Site.css" rel="stylesheet"/>*@
+@*<div class="row">
+        <ul>
+            @foreach(var course in Model)
+                {
+                    <li>
+                        @course.Datetime-@course.Lecturer.Name
+                    </li>
+                }
+        </ul>
+    </div>*@
 
-<div class="course">
-    <ul>
-        @foreach (var course in Model.UpcommingCourses)
-        {
-            <li>
-                <div class="date">
-                    <div class="month">
-                        @course.DateTime.ToString("MM")
-                    </div>
-                    <div class="day">
-                        @course.DateTime.ToString("dd")
-                    </div>
+<ul class="course">
+    >
+    @foreach (var course in Model.UpcommingCourses)
+    {
+        <li>
+            <div class="date">
+                <div class="month">
+                    @course.DateTime.ToString("MM")
                 </div>
-                <div class="details">
-                    <span class="lecturer">
-                        @course.Lecturer.Name
-                        @if (Model.ShowAction)
-                        {
-                            <button class="btn btn-default btn-sm js-toggle-follow" data-user-id="@course.LecturerId">Follow</button>
-                        }
-
-
-                    </span>
-                    <span class="category">
-                        @course.Category.Name
-                    </span>
+                <div class="day">
+                    @course.DateTime.ToString("dd")
+                </div>
+            </div>
+            <div class="details">
+                <span class="lecturer">
+                    @course.Lecturer.Name
                     @if (Model.ShowAction)
-                      {
-                        <button data-course-id="@course.Id" class="btn btn-default btn-sm js-toggle-attendance">Going</button>
-                      }
+                    {
+                        <button class="btn btn-default btn-sm js-toggle-follow" data-user-id="@course.LecturerId">Follow</button>
+                    }
 
-                </div>
-            </li>
-        }
-    </ul>
-</div>
-@section scripts
-{
+
+                </span>
+                <span class="category">
+                    @course.Category.Name
+                </span>
+                @if (Model.ShowAction)
+                {
+                    <button data-course-id="@course.Id" class="btn btn-default btn-sm js-toggle-attendance">Going?</button>
+                }
+
+            </div>
+        </li>
+    }
+</ul>
+
+@section scripts{
     <script>
-        $(document).ready(function() {
-            $(".js-toggle-attendance").click(function (e) {
+        $(document).ready(function () {
+            $("js-toggle-attendance").click(function (e) {
                 var button = $(e.target);
                 $.post("/api/attendances", { courseId: button.attr("data-course-id") })
                     .done(function () {
                         button
                             .removeClass("btn-default")
                             .addClass("btn-info")
-                            .text("Going");
+                            .text("Going")
                     })
                     .fail(function () {
-                        alert("Songthing failed!");
+                        alert("Something failed!");
                     });
             });
             $(".js-toggle-follow").click(function (e) {
@@ -63,10 +74,9 @@
                         button.text("Following");
                     })
                     .fail(function () {
-                        alert("Songthing failed!");
+                        alert("Something Failed")
                     });
             });
-
         });
     </script>
 }

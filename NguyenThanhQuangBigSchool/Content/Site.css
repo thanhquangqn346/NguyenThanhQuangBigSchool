@@ -23,44 +23,59 @@ textarea {
 max-width: 280px;
 }
 .navbar-inverse {
-background-color: #d41d50;
-border-color: #fbf6f6;
+    background-color: #d41d50;
+    border-color: #fbf6f6;
 }
 
-.navbar-inverse .navbar-nav > li > a {
-    color: white;
-}
+    .navbar-inverse .navbar-nav > li > a {
+        color: white;
+    }
 
-.navbar-inverse .navbar-brand {
-    color: white;
-}
+    .navbar-inverse .navbar-brand {
+        color: white;
+    }
+
 .course {
     list-style: none;
 }
-    .course > li .action {
-        display: none;
-        left: 70px;
-        position: absolute;
+
+    .course > li {
+        position: relative;
+        margin-bottom: 30px;
     }
-    .course > li:hover .action {
-        display: block;
-    }
-.course > li {
-position: relative;
-margin-bottom: 30px;
 
-}
+        .course > li .date {
+            text-align: center;
+            background-color: #d41d50;
+            color: white;
+            width: 60px;
+            border-radius: 8px;
+            float: left;
+        }
 
-.course > li .date {
-    text-align: center;
-    background-color: #d41d50;
-    color: white;
-    width: 60px;
-    border-radius: 8px;
-}
-
-.course > li .details {
+.coures > li .details {
     position: absolute;
     top: 0;
     left: 70px;
+    float: left;
+}
+
+.row {
+    width: 100px;
+    height: 100px;
+    background-color: rebeccapurple;
+}
+
+#loginForm {
+    width: 500px;
+}
+
+.course > li .action {
+    display: none;
+    left: 70px;
+    position: absolute;
+}
+
+.course > li:hover .action {
+    display: block;
 }
