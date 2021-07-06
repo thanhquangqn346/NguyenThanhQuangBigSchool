@@ -217,6 +217,10 @@
     <Compile Include="Migrations\202107061132059_AddIsCanceledColumnToCourse.Designer.cs">
       <DependentUpon>202107061132059_AddIsCanceledColumnToCourse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107061502494_EmptyMigration.cs" />
+    <Compile Include="Migrations\202107061502494_EmptyMigration.Designer.cs">
+      <DependentUpon>202107061502494_EmptyMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -330,6 +334,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107061132059_AddIsCanceledColumnToCourse.resx">
       <DependentUpon>202107061132059_AddIsCanceledColumnToCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107061502494_EmptyMigration.resx">
+      <DependentUpon>202107061502494_EmptyMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
