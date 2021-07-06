@@ -37,7 +37,14 @@ border-color: #fbf6f6;
 .course {
     list-style: none;
 }
-
+    .course > li .action {
+        display: none;
+        left: 70px;
+        position: absolute;
+    }
+    .course > li:hover .action {
+        display: block;
+    }
 .course > li {
 position: relative;
 margin-bottom: 30px;
