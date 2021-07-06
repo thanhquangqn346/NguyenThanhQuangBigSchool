@@ -1,4 +1,4 @@
-﻿@model IEnumerable<NguyenThanhQuangBigSchool.Models.Coures>
+﻿@model IEnumerable<NguyenThanhQuangBigSchool.Models.Course>
 @{
     ViewBag.Title = "Mine";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,28 +6,28 @@
 
 <h2>Mine</h2>
 <ul class="course">
-    @foreach (var coures in Model)
+    @foreach (var course in Model)
     {
         <li>
             <div class="date">
                 <div class="month">
-                    @coures.Datetime.ToString("MM")
+                    @course.Datetime.ToString("MM")
                 </div>
                 <div class="day">
-                    @coures.Datetime.ToString("dd")
+                    @course.Datetime.ToString("dd")
                 </div>
             </div>
             <div class="details">
                 <span class="lecturer">
-                    @coures.Lecturer.Name
+                    @course.Lecturer.Name
                 </span>
                 <span class="category">
-                    @coures.Category.Name
+                    @course.Category.Name
                 </span>
             </div>
             <div class="action">
-                <a href="@Url.Action("Edit","Courses",new { id=coures.Id})">Edit</a>
-                <a href="#" class="js-cancel-course" data-course-id="@coures.Id">Cancel</a>
+                <a href="@Url.Action("Edit","Courses",new { id=course.Id})">Edit</a>
+                <a href="#" class="js-cancel-course" data-course-id="@course.Id">Cancel</a>
             </div>
 
         </li>

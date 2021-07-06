@@ -40,7 +40,7 @@ namespace NguyenThanhQuangBigSchool.Controllers
                 viewModel.Categories = _dbContext.Categories.ToList();
                 return View("CourseForm", viewModel);
             }
-            var course = new Coures
+            var course = new Course
             {
                 LecturerId = User.Identity.GetUserId(),
                 Datetime = viewModel.GetDateTime(),

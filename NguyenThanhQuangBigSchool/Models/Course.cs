@@ -6,7 +6,7 @@ using System.Web;
 
 namespace NguyenThanhQuangBigSchool.Models
 {
-    public class Coures
+    public class Course
     {
         public int Id { get; set; }
         public bool IsCanceled { get; set; }

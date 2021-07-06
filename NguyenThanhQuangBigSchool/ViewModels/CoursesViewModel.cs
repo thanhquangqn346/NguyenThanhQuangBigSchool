@@ -8,7 +8,7 @@ namespace NguyenThanhQuangBigSchool.ViewModels
 {
     public class CoursesViewModel
     {
-        public IEnumerable<Coures> UpcommingCourses { get; set; }
+        public IEnumerable<Course> UpcommingCourses { get; set; }
         public bool ShowAction { get; set; }
     }
 }
