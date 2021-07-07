@@ -119,3 +119,4 @@ D:\NguyenThanhQuangBigSchool\NguyenThanhQuangBigSchool\obj\Debug\NguyenThanhQuan
 D:\NguyenThanhQuangBigSchool\NguyenThanhQuangBigSchool\obj\Debug\NguyenThanhQuangBigSchool.csproj.CopyComplete
 D:\NguyenThanhQuangBigSchool\NguyenThanhQuangBigSchool\obj\Debug\NguyenThanhQuangBigSchool.dll
 D:\NguyenThanhQuangBigSchool\NguyenThanhQuangBigSchool\obj\Debug\NguyenThanhQuangBigSchool.pdb
+D:\NguyenThanhQuangBigSchool\NguyenThanhQuangBigSchool\obj\Debug\NguyenThanhQuangBigSchool.csproj.AssemblyReference.cache
