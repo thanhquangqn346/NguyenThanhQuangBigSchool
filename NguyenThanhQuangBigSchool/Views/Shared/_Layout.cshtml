@@ -6,9 +6,13 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/layout.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+    </style>
 
 </head>
-<body>
+<body id="content">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -24,6 +28,7 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Add Course", "Create", "Courses")</li>
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -32,9 +37,61 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-       
+        <time datetime="2014-07-12" class="icon">
+            <em>Moday</em>
+            <strong>July</strong>
+            <span>12</span>
+        </time>
+        <div id="dong_ho">
+            <h2>Thời gian bây giờ là:</h2>
+            <div id="thoi_gian">
+                <div>
+                    <span id="gio">00</span><span>Giờ</span>
+                </div>
+                <div>
+                    <span id="phut">00</span><span>Phút</span>
+                </div>
+                <div>
+                    <span id="giay">00</span><span>Giây</span>
+                </div>
+            </div>
+        </div>
     </div>
-
+    <script language="javascript">
+        // Lấy 2 button và thẻ div
+        var button1 = document.getElementById("btn1");
+        var button2 = document.getElementById("btn2");
+        var div = document.getElementById('content');
+        // Thiết lập click cho button 1
+        button1.onclick = function () {
+            div.style.background = "white";
+            div.style.color = "black";
+        };
+        // Thiết lập click cho button 2
+        button2.onclick = function () {
+            div.style.display = "flex";
+            div.style.justifyContent = "center";
+            div.style.alignItems = "center";
+            div.style.minHeight="100vh";
+            div.style.background = "#FFA17F";
+            div.style.background = "-webkit-linear-gradient(to right, #00223E, #FFA17F)";
+            div.style.background = "linear-gradient(to right, #00223E, #FFA17F)";
+        };
+    </script>
+    <script>
+        function Dong_ho() {
+            var gio = document.getElementById("gio");
+            var phut = document.getElementById("phut");
+            var giay = document.getElementById("giay");
+            var Gio_hien_tai = new Date().getHours();
+            var Phut_hien_tai = new Date().getMinutes();
+            var Giay_hien_tai = new Date().getSeconds();
+            gio.innerHTML = Gio_hien_tai;
+            phut.innerHTML = Phut_hien_tai;
+            giay.innerHTML = Giay_hien_tai;
+        }
+        var Dem_gio = setInterval(Dong_ho, 1000);
+    </script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

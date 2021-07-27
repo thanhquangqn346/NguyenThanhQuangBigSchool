@@ -34,7 +34,8 @@ namespace NguyenThanhQuangBigSchool
                         validateInterval: TimeSpan.FromMinutes(30),
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
-            });            
+            });
+          
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             // Enables the application to temporarily store user information when they are verifying the second factor in the two-factor authentication process.
@@ -54,9 +55,11 @@ namespace NguyenThanhQuangBigSchool
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "252739576355073",
+               appSecret: "e246a7f4cd1f114d1b5230fc0ddd2fe5");
+
+
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
@@ -64,5 +67,6 @@ namespace NguyenThanhQuangBigSchool
             //    ClientSecret = ""
             //});
         }
+
     }
 }
